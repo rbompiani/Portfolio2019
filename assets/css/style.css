@@ -1,0 +1,54 @@
+/* COLOR VARIABLES */
+:root {
+    --threeD:#39AAFF;
+    --js: #FF398F; 
+    --html: #A939FF;
+    --node: #FFAA39;
+}
+  
+/* Headers */
+h1 {
+    font-family: proxima-nova,sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 48px;
+    letter-spacing: -3px;
+    Text-transform: uppercase;
+}
+
+h2 {
+    font-family: proxima-nova-extra-condensed, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 32px;
+    Text-transform: uppercase;
+}
+
+h3 {
+    font-family: proxima-nova-condensed,sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 24px;
+}
+
+p {
+    font-family: proxima-nova,sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 30px;
+}
+
+a {
+    font-family: proxima-nova-condensed,sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+    color: var(--threeD);
+    text-transform: uppercase;
+}
+
+/* Light Text Class */
+.light {
+    color: white;
+}
