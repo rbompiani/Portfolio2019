@@ -5,22 +5,86 @@
     --html: #A939FF;
     --node: #FFAA39;
 }
-  
-/* Headers */
+
+/* GRID */
+#content {
+    display: grid;
+    grid-template-columns: 400px auto;
+    height: 100vh;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+}
+
+/* CONTAINER MARGINS/PADDING */
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+aside {
+    margin: 0px;
+    padding: 10px 32px 10px 48px;
+}
+
+.card {
+    position: relative;
+    padding: 30% 0;
+    background-color: var(--threeD);
+    background: linear-gradient(180deg, rgba(57,170,255,1) 0%, rgba(30,243,255,1) 100%);
+}
+
+.card:hover .image {
+    background-color: var(--threeD);
+    opacity: .5;
+    mix-blend-mode: multiply;
+    background-blend-mode: multiply;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover .snapshot {
+    opacity: 1;
+    transform: translateY(-60%);
+    transition: all 0.3s ease-in-out;
+}
+
+.card .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    transition: all 0.3s ease-in-out;
+}
+
+.card .snapshot {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0em 1em 0em 1em;
+    opacity: 0;
+}
+
+/* TEXT STYLING */
 h1 {
     font-family: proxima-nova,sans-serif;
     font-weight: 100;
     font-style: normal;
     font-size: 48px;
-    letter-spacing: -3px;
+    /*letter-spacing: -3px;*/
     Text-transform: uppercase;
+    margin: 0px 0px 40px 0px;
 }
 
 h2 {
     font-family: proxima-nova-extra-condensed, sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 32px;
+    font-size: 26px;
     Text-transform: uppercase;
 }
 
@@ -28,27 +92,29 @@ h3 {
     font-family: proxima-nova-condensed,sans-serif;
     font-weight: 200;
     font-style: normal;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 p {
     font-family: proxima-nova,sans-serif;
     font-weight: 100;
     font-style: normal;
-    font-size: 22px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 24px;
 }
 
 a {
     font-family: proxima-nova-condensed,sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 16px;
+    font-size: 18px;
     color: var(--threeD);
     text-transform: uppercase;
+    text-decoration: none; 
 }
 
 /* Light Text Class */
 .light {
     color: white;
 }
+

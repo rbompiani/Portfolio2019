@@ -9,53 +9,81 @@
 
         <!-- Style Files -->
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/interaction.css">
 
     </head>
     <body>
 
-        <!-- ***** Sidebar information ****** -->
-        <aside>
+        <div id="content">
+            <!-- ***** Sidebar information ****** -->
+            <aside>
 
-            <!-- HEADER -->
-            <header>
-                <h1>Rebecca Bompiani</h1>
-            </header>
+                <!-- HEADER -->
+                <header>
+                    <h1>Rebecca Bompiani</h1>
+                </header>
 
-            <!-- ABOUT -->
-            <section>
-                <h2>About</h2>
-                <p>
-                    This is my about text. Include my previous experience, and how it relates to programming. 
-                    Also talk about my passions, intrests, and abilities.
-                </p>
-                <a>
-                    Resume
-                    <img src="#">
-                </a>
-            </section>  
+                <!-- ABOUT -->
+                <section>
+                    <h2>About</h2>
+                    <p>
+                        This is my about text. Include my previous experience, and how it relates to programming. 
+                        Also talk about my passions, intrests, and abilities.
+                    </p>
+                    <a>
+                        Resume
+                        <img src="#">
+                    </a>
+                </section>  
 
-            <!-- DATA -->
-            <section>
-                <h2>Skills</h2>
-                <div>
-                    <h3>Javascript</h3>
-                    <h3>HTML</h3>
-                    <h3>Design</h3>
-                    <h3>Node.js</h3>
-                </div>
-            </section>
+                <!-- DATA -->
+                <section>
+                    <h2>Skills</h2>
+                    <div>
+                        <h3>Javascript</h3>
+                        <!-- Rounded switch -->
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <h3>HTML</h3>
+                        <h3>Design</h3>
+                        <h3>Node.js</h3>
+                    </div>
+                </section>
 
-            <!-- FOOTER -->
-            <footer>
+                <!-- FOOTER -->
+                <footer>
 
-            </footer>
-            
-        </aside>
+                </footer>
+                
+            </aside>
 
-        <!-- ***** Main Content ****** -->
-        <main>
+            <!-- ***** Main Content ****** -->
+            <main>
+                <article class="card">
+                    <div class="image" style="background-image: url(assets/images/smalltest.jpg)">
+                    </div>  
+                    <div class="snapshot">
+                        <h2 class="light">Article Title</h2>
+                        <p class="light">This is a sample description for the project.</p>   
+                        <a class="light" href="#">More -></a>                         
+                    </div>
 
-        </main>
+                    
+                </article>
+                <article class="card">2</article>
+                <article class="card">2</article>
+                <article class="card">2</article>
+                <article class="card">2</article>
+                <article class="card">2</article>
+                <article class="card">2</article>
+                <article class="card">2</article>
+            </main>
+
+        </div>
+
+
 
 
     </body>
