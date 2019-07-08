@@ -153,4 +153,22 @@ a {
     background: linear-gradient(180deg, var(--node-light) 0%, var(--node) 100%);
 }
 
-.
+/* --------------- SOCIAL MEDIA ----------------- */
+.social{
+    fill: grey;
+    width: 30px;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.social:hover{
+    width: 40px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+}
