@@ -79,7 +79,6 @@
 
             <!-- ***** Main Content ****** -->
             <main id="main">
-                <div id="app"></div>
             </main>
 
         </div>
@@ -90,37 +89,61 @@
     </body>
 
     <script type="text/babel">
-        class Project extends React.Component{
-            state = {
-                id: 1,
-                title: "Project 1",
-                short_desc: "This is a short description of how the project functions",
-                long_desc: "This is a much longer description of the project, lessons learned, and future steps",
-                year: 2019,
-                img: "flower.jpg",
-                github: "www.github.com",
-                demo: "www.rbompiani.com",
-                major_skill: "javascript",
-                skills: ["javascript","html","css"]
+
+        var projectData;
+
+        $.getJSON( "data/projects.json", function( data ) {
+            projectData=data;
+
+            /* skills bubble component */
+            const Skill = (props)=>{
+                const { skill } = props;
+                const initial = skill.charAt(0);
+                return (
+                    <div className={`skill ${skill}`}>{initial}</div>
+                )
             }
 
-            render(){
-                 return(
-                     <article className={`card ${this.state.major_skill}`}>
-                            <div className="image" style={{ backgroundImage: `url(assets/images/${this.state.img})` }}></div>
-                            <div className="snapshot">
-                                <h2 className="light">{this.state.title}</h2>
-                                <p className="light">{this.state.short_desc}</p>
-                                <a className="light" href="#">More</a>
-                            </div>
-                            <div className="skillBlock">
-                                <div className={`skill ${this.state.skills[0]}`}>j</div>
-                            </div>
-                    </article>
-                )            
+            /* project card component */
+            class Project extends React.Component{
+
+                render(){
+                    return(
+                        <article className={`card ${this.props.major_skill}`}>
+                                <div className="image" style={{ backgroundImage: `url(assets/images/${this.props.img})` }}></div>
+                                <div className="snapshot">
+                                    <h2 className="light">{this.props.title}</h2>
+                                    <p className="light">{this.props.short_desc}</p>
+                                    <a className="light" href="#">More</a>
+                                </div>
+                                <div className="skillBlock">
+                                    {this.props.skills.map((s, idx) => {
+                                        return (<Skill skill={s} key={idx}/>)
+                                    })}
+                                </div>
+                        </article>
+                    )            
+                }
             }
-        }
-        ReactDOM.render(<Project />, document.getElementById('app'));
+
+            class App extends React.Component{
+                state = projectData;
+                
+                render(){
+                    return(
+                        this.state.projects.map((p, pnum) =>{
+                            return (<Project major_skill={p.major_skill} img={p.img} title={p.title} short_desc={p.short_desc} skills={p.skills} key={pnum} />)
+                        })
+                    )                
+                }
+                
+            }
+
+            ReactDOM.render(<App />, document.getElementById('main'));
+
+        })  
+        
+
     </script>
 </html>
 
