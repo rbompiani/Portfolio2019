@@ -19,12 +19,25 @@ $( document ).ready(function() {
             newArt.append(skillBlock);
             $("#main").append(newArt);
         });
-    });
-
-
-    
+    }); 
 });
 
+// ^^JQuery
+// Handlebars
+
+{{#each projects}}
+    <article class="card {{major_skill}}">
+        <div class="image" style="background-image:"{{img}}></div>
+        <div class="snapshot">
+            <h2 class="light">{{title}}}</h2>
+            <p class="light">{{short_desc}}}</p>
+            <a class="light" href="#">More -&gt;</a> </div><div class="skillBlock">
+            {{#each skills}}
+                <div class="skill {{skill}}">j</div>
+            {{/skills}}
+        </div>
+    </article>
+{{/each}}
 /*
 
 var newArt = $("<article>");

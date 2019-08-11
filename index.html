@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Javascript Files -->
+        <!-- React -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+        <!-- Javascript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="assets/javascript/logic.js"></script>
         
-
         <!-- Fonts -->
         <link rel="stylesheet" href="https://use.typekit.net/crl2jbt.css">
 
-        <!-- Style Files -->
+        <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <link rel="stylesheet" type="text/css" href="assets/css/interaction.css">
 
@@ -75,6 +79,7 @@
 
             <!-- ***** Main Content ****** -->
             <main id="main">
+                <div id="app"></div>
             </main>
 
         </div>
@@ -83,4 +88,38 @@
 
 
     </body>
+
+    <script type="text/babel">
+        class Project extends React.Component{
+            state = {
+                id: 1,
+                title: "Project 1",
+                short_desc: "This is a short description of how the project functions",
+                long_desc: "This is a much longer description of the project, lessons learned, and future steps",
+                year: 2019,
+                img: "flower.jpg",
+                github: "www.github.com",
+                demo: "www.rbompiani.com",
+                major_skill: "javascript",
+                skills: ["javascript","html","css"]
+            }
+
+            render(){
+                 return(
+                    <article class="card {this.state.major_skill}">
+                        <div class="image" style="background-image:"{img}></div>
+                        <div class="snapshot">
+                            <h2 class="light">{this.state.title}</h2>
+                            <p class="light">{this.state.short_desc}</p>
+                            <a class="light" href="#">More -&gt;</a> </div><div class="skillBlock">
+                            {#each skills}
+                                <div class="skill {{skill}}">j</div>
+                            {/skills}
+                        </div>
+                    </article>
+                )            
+            }
+        }
+        ReactDOM.render(<Project />, document.getElementById('app'));
+    </script>
 </html>
