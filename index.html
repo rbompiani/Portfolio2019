@@ -8,7 +8,7 @@
 
         <!-- Javascript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="assets/javascript/logic.js"></script>
+        <!-- <script src="assets/javascript/logic.js"></script> -->
         
         <!-- Fonts -->
         <link rel="stylesheet" href="https://use.typekit.net/crl2jbt.css">
@@ -106,16 +106,16 @@
 
             render(){
                  return(
-                    <article class="card {this.state.major_skill}">
-                        <div class="image" style="background-image:"{img}></div>
-                        <div class="snapshot">
-                            <h2 class="light">{this.state.title}</h2>
-                            <p class="light">{this.state.short_desc}</p>
-                            <a class="light" href="#">More -&gt;</a> </div><div class="skillBlock">
-                            {#each skills}
-                                <div class="skill {{skill}}">j</div>
-                            {/skills}
-                        </div>
+                     <article className={`card ${this.state.major_skill}`}>
+                            <div className="image" style={{ backgroundImage: `url(assets/images/${this.state.img})` }}></div>
+                            <div className="snapshot">
+                                <h2 className="light">{this.state.title}</h2>
+                                <p className="light">{this.state.short_desc}</p>
+                                <a className="light" href="#">More</a>
+                            </div>
+                            <div className="skillBlock">
+                                <div className={`skill ${this.state.skills[0]}`}>j</div>
+                            </div>
                     </article>
                 )            
             }
@@ -123,3 +123,18 @@
         ReactDOM.render(<Project />, document.getElementById('app'));
     </script>
 </html>
+
+<!--
+                    //<article className="card {this.state.major_skill}">
+                        <div className="image" style="background-image:"{img}></div>
+                        <div className="snapshot">
+                            <h2 className="light">{this.state.title}</h2>
+                            <p className="light">{this.state.short_desc}</p>
+                            <a className="light" href="#">More</a> </div><div class="skillBlock">
+                            //{#each skills}
+                            //    <div className="skill {this.state.skill}">j</div>
+                            //{/skills}
+                        </div>
+                    //</article>
+
+-->
